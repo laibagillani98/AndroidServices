@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+
+                <resource id="TM_Base::config_section" title="TM Extensions" sortOrder="51">
+                    <resource id="TM_AndroidServices::tabletRecords" title="Tablet Records" sortOrder="10" >
+                        <resource id="TM_AndroidServices::all_grids" title="All Grids" sortOrder="10" ></resource>
+                        <resource id="TM_AndroidServices::llopchecks_dashboard" title="LLop Checks" sortOrder="10" ></resource>
+                        <resource id="TM_AndroidServices::shopqueue_grids" title="Shop Queue Grids" sortOrder="11" ></resource>
+                        <resource id="TM_AndroidServices::otherchecks_dashboard" title="Other Checks" sortOrder="11" ></resource>
+                        <resource id="TM_AndroidServices::dhl_grids" title="DHL Grids" sortOrder="12" ></resource>
+                        <resource id="TM_AndroidServices::breakages_dashboard" title="Breakages" sortOrder="13" ></resource>
+                   </resource>
+                </resource>
+                
+                <resource id="TM_AndroidServices::TabletServices" title="Android Services" sortOrder="51">
+                    <resource id="TM_AndroidServices::WebServices" title="Tablet Services" sortOrder="10"/>
+                </resource>
+
+                <resource id="TM_Base::config_section_delivery" title="TM Extensions" sortOrder="51">
+                    <resource id="TM_AndroidServices::tabletMessaging" title="Tablet Messaging" sortOrder="11" >
+                        <resource id="TM_AndroidServices::message_grid" title="Message Records" sortOrder="12" ></resource>
+                        <resource id="TM_AndroidServices::send_message" title="Send Message" sortOrder="12" ></resource>
+                     </resource>
+                </resource>
+
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                                <resource id="TM_AndroidServices::tablet_config" title="TM Tablet Settings" sortOrder="2"/>
+                        </resource>
+                    </resource>
+                </resource>
+
+                <!--<resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="TM_QuoteSystem::quotesystem_config" title="Quote System"/>
+                        </resource>
+                    </resource>
+                </resource> -->
+            </resource>
+        </resources>
+    </acl>
+</config>

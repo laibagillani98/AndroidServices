@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+    	<update id="TM_Base::manager" title="TM Extensions" module="TM_Base" sortOrder="10" resource="TM_Base::config_section"/>
+
+    	<add id="TM_AndroidServices::tabletRecords" module="TM_AndroidServices" resource="TM_AndroidServices::tabletRecords" sortOrder="20" title="Tablet Records" parent="TM_Base::manager"/>
+        <add id="TM_AndroidServices::tabletMessaging" module="TM_AndroidServices" resource="TM_AndroidServices::tabletMessaging" sortOrder="20" title="Tablet Messaging" parent="TM_Base::manager"/>
+
+        <add id="TM_AndroidServices::message_grid" title="Message Records" module="TM_AndroidServices" sortOrder="20" parent="TM_AndroidServices::tabletMessaging" action="androidservices/tabletmessaging/messagesgrid/" resource="TM_AndroidServices::tabletMessaging"/>
+        <add id="TM_AndroidServices::send_message" title="Send Message" module="TM_AndroidServices" sortOrder="20" parent="TM_AndroidServices::tabletMessaging" action="androidservices/tabletmessaging/sendmessage/" resource="TM_AndroidServices::tabletMessaging"/>
+
+        <add id="TM_AndroidServices::all_grids" title="All Grids" module="TM_AndroidServices" sortOrder="30" parent="TM_AndroidServices::tabletRecords" action="androidservices/main/allgrids/" resource="TM_AndroidServices::all_grids" dependsOnConfig="tablet_config/general/tablet_menu" />
+        <add id="TM_AndroidServices::llopchecks_dashboard" title="LLop Checks" module="TM_AndroidServices" sortOrder="40" parent="TM_AndroidServices::tabletRecords" action="androidservices/llopchecks/dashboard" resource="TM_AndroidServices::llopchecks_dashboard" dependsOnConfig="tablet_config/general/tablet_menu" />
+        <add id="TM_AndroidServices::otherchecks_dashboard" title="Other Checks" module="TM_AndroidServices" sortOrder="45" parent="TM_AndroidServices::tabletRecords" action="androidservices/otherchecks/dashboard" resource="TM_AndroidServices::otherchecks_dashboard" dependsOnConfig="tablet_config/general/tablet_menu" />
+        <add id="TM_AndroidServices::dhl_grids" title="DHL Grids" module="TM_AndroidServices" sortOrder="50" parent="TM_AndroidServices::tabletRecords" action="androidservices/dhlgrids/dashboard" resource="TM_AndroidServices::dhl_grids" dependsOnConfig="tablet_config/general/dhl_grids" />
+
+<!--        <add id="TM_AndroidServices::all_grids" title="All Grids" module="TM_AndroidServices" sortOrder="30" parent="TM_AndroidServices::tabletRecords" action="androidservices/main/allgrids/" resource="TM_AndroidServices::all_grids"/>-->
+<!--        <add id="TM_AndroidServices::llopchecks_dashboard" title="LLop Checks" module="TM_AndroidServices" sortOrder="40" parent="TM_AndroidServices::tabletRecords" action="androidservices/llopchecks/dashboard" resource="TM_AndroidServices::llopchecks_dashboard" />-->
+<!--        <add id="TM_AndroidServices::otherchecks_dashboard" title="Other Checks" module="TM_AndroidServices" sortOrder="45" parent="TM_AndroidServices::tabletRecords" action="androidservices/otherchecks/dashboard" resource="TM_AndroidServices::otherchecks_dashboard" />-->
+        <add id="TM_AndroidServices::breakages_dashboard" title="Breakages" module="TM_AndroidServices" sortOrder="50" parent="TM_AndroidServices::tabletRecords" action="androidservices/breakages/dashboard" resource="TM_AndroidServices::breakages_dashboard" dependsOnConfig="tablet_config/general/tablet_menu"/>
+        <add id="TM_AndroidServices::shopqueue_grids" title="Shop Queue Grids" module="TM_AndroidServices" sortOrder="40" parent="TM_AndroidServices::tabletRecords" action="androidservices/shopqueue/dashboard" resource="TM_AndroidServices::shopqueue_grids" dependsOnConfig="tablet_config/husky_settings/enable_huskygrids"/>
+<!--        <add id="TM_AndroidServices::queued_orders" title="Queued Orders Grid" module="TM_AndroidServices" sortOrder="30" parent="TM_AndroidServices::tabletRecords" action="androidservices/tabletqueuegrids/menugrids/type/queue_orders" resource="TM_AndroidServices::tabletRecords"/>-->
+
+<!--        <add id="TM_AndroidServices::shop_orders" title="Shop Orders Grid" module="TM_AndroidServices" sortOrder="30" parent="TM_AndroidServices::tabletRecords" action="androidservices/tabletqueuegrids/menugrids/type/shop_orders" resource="TM_AndroidServices::tabletRecords"/>-->
+
+<!--        <add id="TM_AndroidServices::completed_orders" title="Completed Orders Grid" module="TM_AndroidServices" sortOrder="30" parent="TM_AndroidServices::tabletRecords" action="androidservices/tabletqueuegrids/menugrids/type/completed_orders" resource="TM_AndroidServices::tabletRecords"/>-->
+
+<!--        <add id="TM_AndroidServices::picked_products" title="Picked Products Grid" module="TM_AndroidServices" sortOrder="30" parent="TM_AndroidServices::tabletRecords" action="androidservices/tabletqueuegrids/menugrids/type/picked_products" resource="TM_AndroidServices::tabletRecords"/>-->
+
+<!--        <add id="TM_AndroidServices::broken_tiles" title="Broken Tiles Grid" module="TM_AndroidServices" sortOrder="30" parent="TM_AndroidServices::tabletRecords" action="androidservices/tabletqueuegrids/menugrids/type/broken_tiles" resource="TM_AndroidServices::tabletRecords"/>-->
+
+<!--        <add id="TM_AndroidServices::problem_orders" title="Problem Orders Grid" module="TM_AndroidServices" sortOrder="30" parent="TM_AndroidServices::tabletRecords" action="androidservices/tabletqueuegrids/menugrids/type/problem_orders" resource="TM_AndroidServices::tabletRecords"/>-->
+
+<!--        <add id="TM_AndroidServices::problem_orders_log" title="Problem Orders Log" module="TM_AndroidServices" sortOrder="30" parent="TM_AndroidServices::tabletRecords" action="androidservices/tabletqueuegrids/menugrids/type/problem_orders_log" resource="TM_AndroidServices::tabletRecords"/>-->
+
+<!--        <add id="TM_AndroidServices::order_checking" title="Order Checking" module="TM_AndroidServices" sortOrder="30" parent="TM_AndroidServices::tabletRecords" action="androidservices/tabletqueuegrids/menugrids/type/order_checking" resource="TM_AndroidServices::tabletRecords"/>-->
+    </menu>
+</config>

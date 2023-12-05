@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="login_order_history" resource="default" engine="innodb" comment="user login and order fetch history">
+        <column xsi:type="int" name="log_id" padding="11" unsigned="false" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="varchar" name="tab_unique_id" nullable="true" length="50" comment="tablet mac address"/>
+        <column xsi:type="varchar" name="user" nullable="false" length="50" comment="Name"/>
+        <column xsi:type="varchar" name="reason" nullable="true" length="50" comment="login reason"/>
+        <column xsi:type="varchar" name="tab_order_id" nullable="true" length="100" comment="order assigned"/>
+        <column xsi:type="varchar" name="tab_order_status" nullable="true" length="50" comment="order process status"/>
+        <column xsi:type="datetime" name="start_time" nullable="true"  comment="order login time"/>
+        <column xsi:type="datetime" name="end_time" nullable="true" comment="order logout time"/>
+        <column xsi:type="text" name="tab_token" nullable="true" comment="Tablet token for fcm pushy"/>
+        <column xsi:type="varchar" name="tab_token_type" nullable="true" length="50" comment="Tablet token type fcm or pushy"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="log_id"/>
+        </constraint>
+    </table>
+    <table name="picked_problem_broken_sku_table" resource="default" engine="innodb" comment="picked,broken and problem products">
+        <column xsi:type="int" name="record_id" padding="11" unsigned="false" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="varchar" name="tablet_unique_id" nullable="false" length="50" comment="work station id"/>
+        <column xsi:type="varchar" name="type" nullable="true" length="50" comment="type of entry"/>
+        <column xsi:type="varchar" name="order_no" nullable="true" length="50" />
+        <column xsi:type="varchar" name="sku" nullable="true" length="50" comment="picked or problem sku"/>
+        <column xsi:type="varchar" name="location" nullable="true" length="50" comment="picked or problem location"/>
+        <column xsi:type="float" name="actual_weight" nullable="true" />
+        <column xsi:type="float" name="calculated_weight" nullable="true" />
+        <column xsi:type="varchar" name="problem" nullable="true" length="50" comment="problem with order"/>
+        <column xsi:type="varchar" name="action_taken" nullable="true" length="20" comment="Action taken on Problem"/>
+        <column xsi:type="int" name="quantity" padding="11" unsigned="true" nullable="true" comment="problem with no boxes"/>
+        <column xsi:type="varchar" name="reported_by" nullable="false" length="50" comment="reporting user name"/>
+        <column xsi:type="datetime" name="reported_at" nullable="false"  comment="user reporting time"/>
+        <column xsi:type="datetime" name="tablet_time" nullable="true"  comment="product picked on tablet"/>
+        <column xsi:type="varchar" name="resolved_by" nullable="true" length="50" comment="problem resolved by"/>
+        <column xsi:type="datetime" name="resolved_at" nullable="true" default="NULL" comment="problem resolved at"/>
+        <column xsi:type="varchar" length="255" name="admin_comment" nullable="true" default="" comment="admin comment on action"/>
+        <column xsi:type="smallint" name="override_weight" padding="2" default="0" unsigned="true" nullable="false" comment="1 for order weight over write by user"/>
+        <column xsi:type="smallint" name="problem_status" padding="2" default="0" unsigned="true" nullable="false" comment="1 for active problem"/>
+        <column xsi:type="text" name="image" nullable="true" comment="reported image"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="record_id"/>
+        </constraint>
+    </table>
+    <table name="tablet_parked_order" resource="default" engine="innodb" comment="orders parked by wharehouse users">
+        <column xsi:type="int" name="park_id" padding="11" unsigned="false" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="varchar" name="user" nullable="false" length="50" comment="Name"/>
+        <column xsi:type="varchar" name="tablet_unique_id" nullable="false" length="50" comment="work station id"/>
+        <column xsi:type="varchar" name="order_no" nullable="false" length="50" />
+        <column xsi:type="text" name="order_data_json" nullable="false" comment="Order processing state"/>
+        <column xsi:type="text" name="item_data_json" nullable="false" comment="Items processing state"/>
+        <column xsi:type="smallint" name="pause_status" padding="2" default="1" unsigned="true" nullable="false" comment="1 for paused"/>
+        <column xsi:type="datetime" name="pause_time_start" nullable="true"  comment="order login time"/>
+        <column xsi:type="datetime" name="pause_time_stop" nullable="true" comment="order logout time"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="park_id"/>
+        </constraint>
+    </table>
+    <table name="tablet_messages" resource="default" engine="innodb" comment="messages sent by admin to tablet users">
+        <column xsi:type="int" name="message_id" padding="11" unsigned="false" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="varchar" name="reciepient" nullable="false" length="50" comment="user name"/>
+        <column xsi:type="varchar" name="tablet_unique_id" default="NULL" length="50" comment="work station id"/>
+        <column xsi:type="varchar" name="message_type" nullable="false" length="50"  comment="is bradcast to all or specific"/>
+        <column xsi:type="text" name="message" nullable="false" comment="message content"/>
+        <column xsi:type="smallint" name="is_sent" padding="2" default="0" unsigned="true" nullable="false" comment="1 for sent"/>
+        <column xsi:type="datetime" name="sent_at" nullable="true"  comment="message sent time"/>
+        <column xsi:type="varchar" name="sent_by" nullable="false" length="50" comment="admin user name"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="message_id"/>
+        </constraint>
+    </table>
+    <table name="order_processing_futurepallet" resource="default" engine="innodb" comment="future orders processing">
+        <column xsi:type="int" name="future_pallet_id" padding="11" unsigned="false" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="int" name="order_id" nullable="false" padding="50" comment="order id"/>
+        <column xsi:type="varchar" name="order_number" nullable="false" length="255" comment="order number"/>
+        <column xsi:type="varchar" name="pallet_number" nullable="false" length="20"  comment="pallet of order from order no"/>
+        <column xsi:type="varchar" name="location" length="50" nullable="true" default="NULL" comment="pallet location for future order"/>
+        <column xsi:type="tinyint" name="active" default="1" nullable="false" comment="1 for active orders not dispatched"/>
+        <column xsi:type="varchar" name="user_name" nullable="false" length="50" comment="order processing user name"/>
+        <column xsi:type="varchar" name="action" nullable="true" default="NULL" length="255" comment="action taken on assigned order"/>
+        <column xsi:type="datetime" name="date" nullable="true"  comment="current time stamp"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="future_pallet_id"/>
+        </constraint>
+    </table>
+    <table name="sales_order" resource="sales" engine="innodb" comment="Sales  Order">
+        <column name="is_checked" nullable="false" xsi:type="int" comment="if order is checked from android" default="0"/>
+    </table>
+</schema>

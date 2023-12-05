@@ -1,0 +1,65 @@
+<div class="recently-printed-header">
+    <div class="logo-left">
+      <span class="top-img">
+        <img class="logo" src="<?php echo $this->getViewFileUrl("TM_Base/images/prime_images/Prime-Logo.jpg"); ?>" />
+        <img class="logo-module" src="<?php echo $this->getViewFileUrl("TM_Base::images/modules/androidservices.png"); ?>" />
+        <h3 class="user" id="login-user2"> Breakages</h3>
+        <h3 class="dpd-optional" id="dpd_optional"></h3>
+      </span>
+    </div>
+</div>
+
+<div class="line-horizantal" style="background: #fff; overflow: hidden;">
+    <hr>
+</div><div id="testdiv">
+<div class="center-content">
+	<div id="breakages" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+           <img class="img-block" src="<?php echo $this->getViewFileUrl("TM_AndroidServices::images/tabs/broken_tiles.png"); ?>" />
+        </span>
+        <span class="broken-count countcss"> </span>
+		<span class="title">Breakages</span> 
+	</div>
+	<div id="breakages_log" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+           <img class="img-block" src="<?php echo $this->getViewFileUrl("TM_AndroidServices::images/tabs/queued_orders.png"); ?>" />
+        </span>
+		<span class="title">Breakages Log</span> 
+	</div>
+  </div>
+
+<div id="grid-detail"></div>
+    <div id="commentModal" class="comment-modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-content-center">
+                <h3>Please Enter Comment</h3>
+                <input type="hidden" id="record_id" value="">
+                <input type="hidden" id="action_type" value="">
+                <textarea id="admin_comment" class="admin-comment"></textarea>
+            </div>
+            <div class="modal-content-buttons">
+                <button id="call_breakage_action">Submit</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<?php
+$formData = [
+    'divElement'       =>  '#testdiv',
+];
+
+$serializedFormData = $block->getjsonData($formData);
+
+?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "myjs": <?php /* @noEscape */ echo $serializedFormData; ?>
+        }
+    }
+</script>

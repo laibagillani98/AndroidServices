@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * TM QuickSearch
+ *
+ * @category    TM
+ * @package     TM_AndroidServices
+ * @author      Tile Mountain
+ * @Email       developer@tilemountain.co.uk
+ *
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        
+        <section id="tablet_config" translate="label" sortOrder="130" showInDefault="1" showInWebsite="0" showInStore="0">
+            <class>separator-top</class>
+            <label>Tablet Settings</label>
+            <tab>tm_extensions</tab>
+            <resource>TM_AndroidServices::tablet_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Settings</label>
+                <field id="shop_orders" translate="label" type="select" sortOrder="2" showInDefault="1" canRestore="0">
+                    <label>Shop Orders</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Turn on shop orders for Tablet</comment>
+                </field>
+
+                <field id="enable_tablet" translate="enable tablet statuses" type="select" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable Tablet Fields</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment> Yes if you want to use pallet pick on tablet </comment>
+                </field>
+
+
+                <field id="tm_bm_config" translate="enable tablet statuses" type="select" sortOrder="8" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable For TM</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable for TM/Disable For BM</comment>
+                </field>
+
+                <field id="tablet_trial" translate="label" type="select" sortOrder="4" showInDefault="1" canRestore="0">
+                    <label>Tablet Trial Status</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Turn on Tablet Trials for Testing</comment>
+                </field>
+                  <field id="llop_checks" translate="label" type="select" sortOrder="5" showInDefault="1" canRestore="0">
+                    <label>LLOP Checks</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Turn on LLOP Checks for Tablet</comment>   
+                </field>
+                <field id="tablet_complete" translate="label" type="select" sortOrder="6" showInDefault="1" canRestore="0">
+                    <label>Tablet Complete</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Turn on check tablet complete</comment>   
+                </field>
+                  <field id="tablet_menu" translate="label" type="select" sortOrder="7" showInDefault="1" canRestore="0">
+                    <label>Tablet Menu</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If enabled will show All Grids, LLop Checks and Other Checks grid in menu.</comment>   
+                </field>
+                <field id="enable_consolidation" translate="label" type="select" sortOrder="5" showInDefault="1" canRestore="0">
+                    <label>Enable DHL Consolidation</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If enabled DHL Consolidation will work</comment>   
+                </field>
+                  <field id="dhl_grids" translate="label" type="select" sortOrder="7" showInDefault="1" canRestore="0">
+                    <label>DHL Grid</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If enabled will show DHL Grids in menu</comment>   
+                </field>
+                 <field id="dhl_batch_limit" translate="label" type="text" sortOrder="7" showInDefault="1" canRestore="0">
+                    <label>DHL Batch Limit</label>
+                    <comment>Enter Orders limit in DHL Combined Pick Batch</comment>   
+                </field>
+                <field id="dhl_batch_easywms" translate="label" type="select" sortOrder="7" showInDefault="1" canRestore="0">
+                    <label>Generate DHL Batch with Easy WMS</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If enabled Batch will be generated through Easy WMS</comment>   
+                </field>
+                <field id="depriortize_ot" translate="label" type="select" sortOrder="7" showInDefault="1" canRestore="0">
+                    <label>Depriortize Next Day OT Orders</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If enabled Next Day OT orders will only come after 5pm</comment>   
+                </field>
+                 <field id="priortize_p2p" translate="label" type="select" sortOrder="7" showInDefault="1" canRestore="0">
+                    <label>Priortize Next Day P2P Orders</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If enabled Next Day P2P will be Priortize after OT</comment>   
+                </field>
+                <field id="dhl_test_mode" translate="label" type="select" sortOrder="8" showInDefault="1" canRestore="0">
+                    <label>DHL Test Mode</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If enabled will show DHL Grids in menu</comment>   
+                </field>
+                <field id="training_weight" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Training Users Weight Threshold</label>
+                    <comment>enter weight limit for training mode users</comment>
+                </field>
+                  <field id="b_location_url" translate="label" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Nav Url</label>
+                    <comment>nav url for B Location Orders Queue</comment>
+                </field>
+
+                <field id="training_users" translate="label comment" type="multiselect" sortOrder="21" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Training Mode Users</label>
+                    <source_model>TM\PalletQueue\Model\Config\Source\Users</source_model>
+                    <comment>Select traininee users for tablet</comment>
+                </field>
+                <field id="authorized_users" translate="label comment" type="multiselect" sortOrder="22" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Authorized Users</label>
+                    <source_model>TM\PalletQueue\Model\Config\Source\AuthorizedUsers</source_model>
+                    <comment>Select authorized users for tablet</comment>
+                </field>
+                <field id="easywms_users" translate="label" sortOrder="23" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>EasyWMS Card Configuration</label>
+                    <frontend_model>TM\AndroidServices\Block\Adminhtml\System\Config\Form\Field\CardConfig</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+                <field id="fully_refunded_products" translate="label" type="select" sortOrder="33" showInDefault="1" canRestore="0">
+                    <label>Hide Fully Refunded Products on Expedite</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If set to 'Yes', fully refunded products do not appear during expedite</comment>
+                </field>
+                <field id="include_a_picking" translate="label" type="select" sortOrder="34" showInDefault="1" canRestore="0">
+                    <label>Include a_picking Orders in Order Collection</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If enabled will add a_picking Orders in Order Collection</comment>
+                </field>
+            </group>
+<!--            <group id="messaging" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">-->
+<!--                <label>Tablet Messaging</label>-->
+<!--                <field id="message_types" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">-->
+<!--                    <label>Message Type</label>-->
+<!--                    <frontend_model>TM\AndroidServices\Block\Adminhtml\System\Config\Form\Field\MessageTypes</frontend_model>-->
+<!--                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>-->
+<!--                </field>-->
+<!--            </group>-->
+             <group id="printer_settings" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Printer Settings</label>
+                <field id="printers_option" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Network Printer Settings</label>
+                    <frontend_model>TM\AndroidServices\Block\Adminhtml\System\Config\Form\Field\Printers</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+            </group>
+             <group id="husky_settings" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+               <label>Husky Settings</label>
+                 <field id="enable_huskygrids" translate="label" type="select" sortOrder="1" showInDefault="1" canRestore="0">
+                    <label>Enable Husky Grids</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                 <field id="enable_ordercheck" translate="label" type="select" sortOrder="2" showInDefault="1" canRestore="0">
+                    <label>Order Check Configuration</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Checked From Expediate App before wrapping for husky</comment>
+                </field>
+                <!-- <field id="collection_stores" translate="label comment" type="multiselect" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Exclude Showrooms From Standard Queue</label>
+                    <source_model>TM\AndroidServices\Model\Config\Source\AllStores</source_model>
+                    <comment>Collection orders of selected stores will be excluded from standard queue </comment>
+                </field> -->
+
+                 <field id="showroom_ipaddress" translate="label comment" type="text" sortOrder="120" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>IP Address of Showrooms</label>
+                    <frontend_model>TM\AndroidServices\Block\Adminhtml\System\Config\Form\Field\ShowroomIp</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                 </field>
+              
+                <field id="enable_showrooms" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Showroom Users</label>
+                    <frontend_model>TM\AndroidServices\Block\Adminhtml\System\Config\Form\Field\Showrooms</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>             
+
+                <field id="showroom_expediteusers" translate="label" sortOrder="20" showInDefault="5" showInWebsite="1" showInStore="1">
+                  <label> Shop Expedite Users</label>
+                  <frontend_model>TM\AndroidServices\Block\Adminhtml\System\Config\Form\Field\ShopExpediate</frontend_model>
+                  <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+
+                <field id="shop_queue_grids" translate="label comment" type="multiselect" sortOrder="18" showInDefault="1" showInWebsite="0" showInStore="0">
+                  <label>Showrooms For Shop Queue Grids</label>
+                  <source_model>TM\AndroidServices\Model\Config\Source\ShowroomLabels</source_model>
+                  <comment>Selected Showrooms will be shown in Shop Queue Grids in Tablet Records</comment>
+                </field>
+                 <field id="showroom_deliverymethod" translate="label" sortOrder="30" showInDefault="5" showInWebsite="1" showInStore="1">
+                  <label>Showroom Delivery Method By Pallex</label>
+                  <frontend_model>TM\AndroidServices\Block\Adminhtml\System\Config\Form\Field\ShowroomDeliveryMethod</frontend_model>
+                  <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                  <comment>Select Yes to Send By Pallex</comment>
+                </field>
+
+                 <!-- <field id="husky_grid" translate="label comment" type="multiselect" sortOrder="18" showInDefault="1" showInWebsite="0" showInStore="0">
+                  <label>Showrooms For Husky Shop Collection</label>
+                  <source_model>TM\AndroidServices\Model\Config\Source\ShowroomLabels</source_model>
+                  <comment>Selected Showrooms will be shown in Husky Shop Collection and Reported Problems</comment>
+                </field>  -->
+            </group>
+            <group id="fcm_settings" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>FCM Settings</label>
+                <field id="server_key" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>FCM Server key</label>
+                </field>
+                <field id="server_key_pushy" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Pushy Server key</label>
+                </field>
+            </group>
+            <group id="tablet_config_fields" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Tablet Passwords</label>
+                <field id="admin_logout" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Logout Password</label>
+                </field>
+                <field id="tablet_settings" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tablet Settings Password</label>
+                </field>
+                <field id="scale_check" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Scale Check Password</label>
+                </field>
+            </group>
+            <group id="tablet_config_qr" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Tablet Configuration QR Code</label>
+                <field id="qr_code" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>QR</label>
+                    <frontend_model>TM\AndroidServices\Block\Adminhtml\System\Config\TabletConfigurations</frontend_model>
+                </field>
+            </group>
+        </section>
+        <section id="config_section" translate="label" type="text" sortOrder="302" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="tm_palletqueue" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="check_pick_created" translate="label" type="select" sortOrder="4" showInDefault="1" canRestore="0">
+                    <label>Check Pick Created</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Check if Order Pick is Created in NAV for Tablet App</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

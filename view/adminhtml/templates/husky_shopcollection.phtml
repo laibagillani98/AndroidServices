@@ -1,0 +1,71 @@
+<?php $configValue = $block->getHuskyShopCollection();?>
+<style>
+  #grid-heading{
+    margin: 0;  
+    padding: 0; 
+    display: flex;  
+    justify-content: center;  
+    align-items: flex-start;
+ }
+#husky-heading{
+    color: #121d6e;
+    margin-top: 30px;
+    font-family: 'champagne';
+    letter-spacing: 2px;
+    font-size: 54px;
+    font-weight: 600;
+}
+</style>
+<div id="shop-collection">
+<div class="center-content">
+<div id = "grid-heading"><h1 id="husky-heading">Husky Shop Collection</h1>
+ </div>
+ <div class="line-horizantal" style="background: #fff; overflow: hidden;">
+    <hr>
+</div>
+<?php foreach ($configValue as $data): ?>
+            <div id="<?= $data['id'] ?>" class="tablet-queue-grids click-able grid_detail">
+                <span class="text-block">
+                    <img class="img-block" src="<?= $this->getViewFileUrl("TM_AndroidServices::images/tabs/picked_products.png"); ?>" />
+                    <span class="<?= $data['id'] ?>-collectioncount countcss"> </span>
+                </span>
+                <span class="title"><?= $data['title'] ?></span>
+            </div>
+        <?php endforeach; ?>
+</div>
+
+<div id="grid-detail"></div>
+    <div id="commentModal" class="comment-modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-content-center">
+                <h3>Please Enter Comment</h3>
+                <input type="hidden" id="record_id" value="">
+                <input type="hidden" id="action_type" value="">
+                <textarea id="admin_comment" class="admin-comment"></textarea>
+            </div>
+            <div class="modal-content-buttons">
+                <button id="call_action">Submit</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<?php
+$formData = [
+    'divElement'       =>  '#shop-collection',
+];
+
+$serializedFormData = $block->getjsonData($formData);
+
+?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "myjs": <?php /* @noEscape */ echo $serializedFormData; ?>
+        }
+    }
+</script>

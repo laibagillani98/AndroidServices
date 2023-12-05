@@ -1,0 +1,93 @@
+<?php $configValue = $block->getShopQueueGridsConfigValue();?>
+<style>
+  #grid-heading{
+    margin: 0;  
+    padding: 0; 
+    display: flex;  
+    justify-content: center;  
+    align-items: flex-start;
+ }
+#husky-heading{
+    color: #121d6e;
+    margin-top: 30px;
+    font-family: 'champagne';
+    letter-spacing: 2px;
+    font-size: 54px;
+    font-weight: 600;
+}
+</style>
+<div id="shop-orders">
+<div class="center-content">
+<div id = "grid-heading"><h1 id="husky-heading">Tablet Shop Queue Grid</h1>
+ </div>
+ <div class="line-horizantal" style="background: #fff; overflow: hidden;">
+    <hr>
+</div>
+	<div id="shop_completed_order_grid" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+            <img class="img-block" src="<?php echo $this->getViewFileUrl("TM_AndroidServices::images/tabs/completed_orders.png"); ?>" />
+        </span>
+		<span class="title">Completed Orders</span> 
+	</div>
+
+    <?php foreach ($configValue as $data): ?>
+            <div id="<?= $data['id'] ?>" class="tablet-queue-grids click-able grid_detail">
+                <span class="text-block">
+                    <img class="img-block" src="<?= $this->getViewFileUrl("TM_AndroidServices::images/tabs/picked_products.png"); ?>" />
+                    <span class="<?= $data['id'] ?>-count countcss"> </span>
+                </span>
+                <span class="title"><?= $data['title'] ?></span>
+            </div>
+        <?php endforeach; ?>
+
+     <div id="receiving_checks" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+            <img class="img-block" src="<?php echo $this->getViewFileUrl("TM_AndroidServices::images/tabs/order_checks.png"); ?>" />
+            <!-- <span class="receiving-count countcss"> </span> -->
+        </span>
+        <span class="title">Receiving Checks</span> 
+    </div>
+    <div id="loading_checks" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+            <img class="img-block" src="<?php echo $this->getViewFileUrl("TM_AndroidServices::images/tabs/order_checks.png"); ?>" />
+            <!-- <span class="loading-count countcss"> </span> -->
+        </span>
+        <span class="title">Loading Checks</span> 
+    </div>  
+</div>
+
+<div id="grid-detail"></div>
+    <div id="commentModal" class="comment-modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-content-center">
+                <h3>Please Enter Comment</h3>
+                <input type="hidden" id="record_id" value="">
+                <input type="hidden" id="action_type" value="">
+                <textarea id="admin_comment" class="admin-comment"></textarea>
+            </div>
+            <div class="modal-content-buttons">
+                <button id="call_action">Submit</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<?php
+$formData = [
+    'divElement'       =>  '#shop-orders',
+];
+
+$serializedFormData = $block->getjsonData($formData);
+
+?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "myjs": <?php /* @noEscape */ echo $serializedFormData; ?>
+        }
+    }
+</script>

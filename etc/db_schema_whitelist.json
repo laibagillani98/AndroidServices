@@ -1,0 +1,98 @@
+{
+    "login_order_history": {
+        "column": {
+            "log_id": true,
+            "user": true,
+            "reason": true,
+            "tab_order_id": true,
+            "tab_order_status": true,
+            "start_time": true,
+            "end_time": true,
+            "tab_unique_id": true,
+            "tab_token": true,
+            "tab_token_type": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "picked_problem_broken_sku_table": {
+        "column": {
+            "record_id": true,
+            "tablet_unique_id": true,
+            "type": true,
+            "order_no": true,
+            "sku": true,
+            "location": true,
+            "actual_weight": true,
+            "calculated_weight": true,
+            "problem": true,
+            "quantity": true,
+            "reported_by": true,
+            "reported_at": true,
+            "tablet_time": true,
+            "resolved_by": true,
+            "resolved_at": true,
+            "problem_status": true,
+            "image": true,
+            "action_taken": true,
+            "admin_comment": true,
+            "override_weight": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "tablet_parked_order": {
+        "column": {
+            "park_id": true,
+            "user": true,
+            "tablet_unique_id": true,
+            "order_no": true,
+            "order_data_json": true,
+            "item_data_json": true,
+            "pause_status": true,
+            "pause_time_start": true,
+            "pause_time_stop": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "tablet_messages": {
+        "column": {
+            "message_id": true,
+            "reciepient": true,
+            "tablet_unique_id": true,
+            "message_type": true,
+            "message": true,
+            "is_sent": true,
+            "sent_at": true,
+            "sent_by": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "order_processing_futurepallet": {
+        "column": {
+            "future_pallet_id": true,
+            "order_id": true,
+            "order_number": true,
+            "pallet_number": true,
+            "location": true,
+            "active": true,
+            "user_name": true,
+            "action": true,
+            "date": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "sales_order": {
+        "column": {
+            "is_checked": true
+        }
+    }
+}

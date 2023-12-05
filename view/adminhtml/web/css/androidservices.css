@@ -1,0 +1,138 @@
+.top-logout{
+	display: none !important;
+}
+
+.tablet-queue-grids {
+    width: 150px;
+    height: 150px;
+    background: #0A5AC3;
+    text-align: center;
+    line-height: 115px;
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    color: #fff;
+    margin-top:20px ;
+    float: left;
+	margin-right: 20px;
+}
+
+.tablet-queue-grids.click-able{
+	cursor: pointer;
+}
+
+.tablet-queue-grids .title {
+    position: absolute;
+	bottom: 0;
+	left: 0;
+	font-size: 15px;
+	line-height: normal;
+	text-align: left;
+	width: 88%;
+	padding: 5px 6%;
+	font-weight: initial;
+}
+
+.text-block {
+    display: block;
+    margin: 0 auto;
+    width: 115px;
+    text-align: right;
+}
+
+.img-block{
+    float: left;
+    display: inline-block;
+    width: 60%;
+}
+
+span.countcss{
+    justify-content: center;
+    display: flex;
+    color: black;
+    background: red;
+}
+
+.center-content{
+    float: left;
+    width: 100%;
+}
+
+.grid-title{
+    float: left;
+    width: 100%;
+}
+
+.page-wrapper{
+    width: 100%;
+}
+
+.col-quantity{
+    width: 140px;
+}
+
+.problem_action_col{
+    width: 260px;
+    display: inline-flex;
+}
+
+.tablet-queue-grids.click-able.grid_detail.selected{
+    background-color: darkblue;
+}
+
+.col-submitted_image{
+    width: 0;
+}
+
+.comment-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 45%;
+    height: 30%;
+}
+
+/* The Close Button */
+.modal-close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.admin-comment{
+    width: 80%;
+    height: 120px;
+    border: 2px solid black;
+    resize: none;
+}
+option:empty{
+    display: block !important;
+}
+
+.modal-content-buttons{
+    margin-top: 1%;
+}

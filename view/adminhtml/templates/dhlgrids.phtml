@@ -1,0 +1,80 @@
+<div id="testdiv">
+<div class="center-content">
+	<div id="completed_combined_picks" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+           <img class="img-block" src="<?php echo $this->getViewFileUrl("TM_AndroidServices::images/tabs/broken_tiles.png"); ?>" />
+        </span>
+        <!-- <span class="brokentiles-count countcss"> </span> -->
+		<span class="title">Completed Combined Picks</span> 
+	</div>
+	<div id="active_combined_picks" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+           <img class="img-block" src="<?php echo $this->getViewFileUrl("TM_AndroidServices::images/tabs/queued_orders.png"); ?>" />
+        </span>
+        <span  class="ActiveCombinePick countcss"> </span>
+		<span class="title">Active    Combined Picks</span> 
+	</div>
+    <div id="pending_combined_picks" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+           <img class="img-block" src="<?php echo $this->getViewFileUrl("TM_AndroidServices::images/tabs/queued_orders.png"); ?>" />
+        </span>
+        <span  class="PendingCombinePick countcss"> </span>
+		<span class="title">Pending Combined Picks</span> 
+	</div>
+    <div id="dhl_queue" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+           <img class="img-block" src="<?php echo $this->getViewFileUrl("TM_AndroidServices::images/tabs/queued_orders.png"); ?>" />
+        </span>
+        <span id="" class="DHL_Queue countcss"> </span>
+		<span class="title">DHL Queue</span> 
+	</div>
+    <div id="dhl_queue_batches" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+           <img class="img-block" src="<?php echo $this->getViewFileUrl("TM_AndroidServices::images/tabs/queued_orders.png"); ?>" />
+        </span>
+        <span id="" class="DHLBatch_Queue countcss"> </span>
+		<span class="title">DHL Batches Ready/Error</span>
+	</div>
+    
+  </div>
+
+<div id="grid-detail"></div>
+    <div id="commentModal" class="comment-modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-content-center">
+                <h3>Please Enter Comment</h3>
+                <input type="hidden" id="record_id" value="">
+                <input type="hidden" id="action_type" value="">
+                <textarea id="admin_comment" class="admin-comment"></textarea>
+            </div>
+            <div class="modal-content-buttons">
+                <button id="call_action">Submit</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<?php
+$formData = [
+    'divElement'       =>  '#testdiv',
+];
+
+$serializedFormData = $block->getjsonData($formData);
+
+?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "myjs": <?php /* @noEscape */ echo $serializedFormData; ?>
+        }
+    }
+</script>
+<style>
+.no_problem , .problem , .ok{padding: 5px 2px;margin: 5px 2px;}
+.problem {background: #FF0000;color: #ffffff;}
+.ok {background: #18724b;color: #ffffff;}
+</style>

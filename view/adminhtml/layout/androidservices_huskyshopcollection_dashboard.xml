@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <head>
+        <!-- <title>
+            Shop Queue Grids
+        </title> -->
+
+       <css src="TM_Base::css/base.css"/>
+       <css src="TM_AndroidServices::css/androidservices.css"/>
+<!--       <script src="TM_AndroidServices::js/allgrids.js"/>-->
+    </head>
+    <referenceContainer name="header" remove="true" />
+    <referenceContainer name="menu" remove="true" />
+    <referenceContainer name="logo" remove="true" />
+    <referenceBlock name="notices.wrapper" remove="true" />
+    <referenceBlock name="notification.messages" remove="true" />
+    <referenceContainer name="header.container" remove="true" />
+    <referenceContainer name="footer" remove="true" />
+    <body>
+        <referenceContainer name="content">
+            <!-- <block class="TM\Base\Block\Adminhtml\Base\Header" name="base_design" template="TM_Base::base_header.phtml"></block> -->
+            <block class="TM\AndroidServices\Block\Adminhtml\HuskyShopCollection\Dashboard" name="husky_shopcollection" template="TM_AndroidServices::husky_shopcollection.phtml"></block>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">tm_androidservices_messages_listing.tm_androidservices_messages_listing_data_source</item>
+            <item name="deps" xsi:type="string">tm_androidservices_messages_listing.tm_androidservices_messages_listing_data_source</item>
+        </item>
+        <item name="spinner" xsi:type="string">messages_columns</item>
+<!--        <item name="buttons" xsi:type="array">-->
+<!--            <item name="add" xsi:type="array">-->
+<!--                <item name="name" xsi:type="string">add</item>-->
+<!--                <item name="label" xsi:type="string" translate="true">Add New Icon</item>-->
+<!--                <item name="class" xsi:type="string">primary</item>-->
+<!--                <item name="url" xsi:type="string">*/*/addnewicon</item>-->
+<!--            </item>-->
+<!--        </item>-->
+    </argument>
+    <dataSource name="nameOfDataSource">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
+            <argument name="name" xsi:type="string">tm_androidservices_messages_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">message_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="indexField" xsi:type="string">message_id</item>
+                    </item>
+                </item>
+            </argument>
+        </argument>
+    </dataSource>
+    <container name="listing_top">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="template" xsi:type="string">ui/grid/toolbar</item>
+            </item>
+        </argument>
+
+        <paging name="listing_paging">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="provider" xsi:type="string">tm_androidservices_messages_listing.tm_androidservices_messages_listing.listing_top.bookmarks</item>
+                        <item name="namespace" xsi:type="string">current.paging</item>
+                    </item>
+                    <item name="selectProvider" xsi:type="string">tm_androidservices_messages_listing.tm_androidservices_messages_listing.stockicons_columns.ids</item>
+                    <item name="displayArea" xsi:type="string">bottom</item>
+                </item>
+            </argument>
+        </paging>
+
+        <filters name="listing_filters">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="provider" xsi:type="string">tm_androidservices_messages_listing.tm_androidservices_messages_listing.listing_top.bookmarks</item>
+                        <item name="namespace" xsi:type="string">current.filters</item>
+                    </item>
+                    <item name="templates" xsi:type="array">
+                        <item name="filters" xsi:type="array">
+                            <item name="select" xsi:type="array">
+                                <item name="component" xsi:type="string">Magento_Ui/js/form/element/ui-select</item>
+                                <item name="template" xsi:type="string">ui/grid/filters/elements/ui-select</item>
+                            </item>
+                        </item>
+                    </item>
+                    <item name="childDefaults" xsi:type="array">
+                        <item name="provider" xsi:type="string">tm_androidservices_messages_listing.tm_androidservices_messages_listing.listing_top.listing_filters</item>
+                        <item name="imports" xsi:type="array">
+                            <item name="visible" xsi:type="string">tm_androidservices_messages_listing.tm_androidservices_messages_listing.listing_top.bookmarks:current.columns.${ $.index }.visible</item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+
+        </filters>
+
+    </container>
+    <columns name="messages_columns">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="resizeConfig" xsi:type="array">
+                    <item name="enabled" xsi:type="boolean">true</item><!-- This is required configuration -->
+                </item>
+            </item>
+        </argument>
+<!--        <selectionsColumn name="ids">-->
+<!--            <argument name="data" xsi:type="array">-->
+<!--                <item name="config" xsi:type="array">-->
+<!--                    <item name="resizeEnabled" xsi:type="boolean">false</item>-->
+<!--                    <item name="resizeDefaultWidth" xsi:type="string">55</item>-->
+<!--                    <item name="indexField" xsi:type="string">message_id</item>-->
+<!--                </item>-->
+<!--            </argument>-->
+<!--        </selectionsColumn>-->
+        <column name="message_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">int</item>
+                    <item name="label" xsi:type="string" translate="true">Message Id</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">10</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+            </argument>
+        </column>
+<!--        <column name="sent_at" class="Magento\Ui\Component\Listing\Columns\Date" component="Magento_Ui/js/grid/columns/date">-->
+<!--            <settings>-->
+<!--                <filter>dateRange</filter>-->
+<!--                <dataType>date</dataType>-->
+<!--                <dateFormat>yyyy-MM-dd HH:mm:ss</dateFormat>-->
+<!--                <label translate="true">Sent At</label>-->
+<!--                <timezone>false</timezone>-->
+<!--            </settings>-->
+<!--        </column>-->
+
+        <column name="sent_at" class="Magento\Ui\Component\Listing\Columns\Date" component="Magento_Ui/js/grid/columns/date">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">dateRange</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                    <item name="dataType" xsi:type="string">date</item>
+                    <item name="dateFormat" xsi:type="string">Y-MM-dd HH:mm:ss</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Sent At</label>
+            </settings>
+        </column>
+        <column name="message_type">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">TM\AndroidServices\Model\Config\Source\MessageTypes</item>
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">select</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string" translate="true">Message Type</item>
+                    <item name="resizeEnabled" xsi:type="boolean">true</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">30</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                </item>
+            </argument>
+        </column>
+        <column name="reciepient" class="TM\AndroidServices\Ui\Component\Listing\Column\Reciepient">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Reciepient</item>
+                    <item name="resizeEnabled" xsi:type="boolean">true</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">40</item>
+                    <item name="sortOrder" xsi:type="number">40</item>
+                </item>
+            </argument>
+        </column>
+        <column name="message">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Message</item>
+                    <item name="sortOrder" xsi:type="number">50</item>
+                    <item name="resizeEnabled" xsi:type="boolean">true</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">50</item>
+                </item>
+            </argument>
+        </column>
+<!--        <actionsColumn name="actions" class="TM\Customstock\Ui\Component\Listing\Column\Actions">-->
+<!--            <argument name="data" xsi:type="array">-->
+<!--                <item name="config" xsi:type="array">-->
+<!--                    <item name="indexField" xsi:type="string">customstockicons_id</item>-->
+<!--                </item>-->
+<!--            </argument>-->
+<!--        </actionsColumn>-->
+
+    </columns>
+</listing>

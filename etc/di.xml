@@ -1,0 +1,33 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="tm_androidservices_messages_listing_data_source" xsi:type="string">TM\AndroidServices\Model\ResourceModel\TabletMessages\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="virtulaclassfortabletmessagesgrid">
+    <arguments>
+        <argument name="mainTable" xsi:type="string">tablet_messages</argument>
+        <argument name="resourceModel" xsi:type="string">TM\AndroidServices\Model\ResourceModel\TabletMessages</argument>
+    </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="tm_orderchecking_grid_listing_data_source" xsi:type="string">TM\AndroidServices\Model\ResourceModel\OrderChecking\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="virtulaclassforcustomstockicone">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">order_checking_app</argument>
+            <argument name="resourceModel" xsi:type="string">TM\AndroidServices\Model\ResourceModel\OrderChecking</argument>
+        </arguments>
+    </virtualType>
+<preference for="TM\AndroidServices\Api\PalletQueueServicesInterface" type="TM\AndroidServices\Model\PalletQueueServices"/>
+<preference for="TM\AndroidServices\Api\FutureOrdersServicesInterface" type="TM\AndroidServices\Model\FutureOrdersServices"/>
+<preference for="TM\AndroidServices\Api\WebServicesInterface" type="TM\AndroidServices\Model\WebServices"/>
+<preference for="TM\AndroidServices\Api\SkuHistoryRepositoryInterface" type="TM\AndroidServices\Model\SkuHistoryRepository" />
+<preference for="TM\AndroidServices\Api\Data\SkuHistoryInterface" type="TM\AndroidServices\Model\SkuHistory" />
+</config>

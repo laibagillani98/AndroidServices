@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <tablet_config>
+            <general>
+                <include_a_picking>1</include_a_picking>
+            </general>
+        </tablet_config>
+    </default>
+</config>

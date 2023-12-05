@@ -1,0 +1,120 @@
+<div id="testdiv">
+<div class="center-content">
+	<div id="completed_orders" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+            <img class="img-block" src="<?php echo $this->getViewFileUrl("TM_AndroidServices::images/tabs/completed_orders.png"); ?>" />
+        </span>
+		<span class="title">Completed Orders</span> 
+	</div>
+	<div id="picked_products" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+            <img class="img-block" src="<?php echo $this->getViewFileUrl("TM_AndroidServices::images/tabs/picked_products.png"); ?>" />
+        </span>
+		<span class="title">Picked Products</span> 
+	</div>
+	<!--<div id="broken_tiles" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+            <img class="img-block" src="<?php echo $this->getViewFileUrl("TM_AndroidServices::images/tabs/broken_tiles.png"); ?>" />
+            <span class="broken-count countcss"> </span>
+        </span>
+		<span class="title">Broken Tiles</span> 
+	</div>-->
+	<div id="queue_orders" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+            <img class="img-block" src="<?php echo $this->getViewFileUrl("TM_AndroidServices::images/tabs/queued_orders.png"); ?>" />
+            <span class="queued-count countcss"> </span>
+        </span>
+		<span class="title">Queued Orders</span> 
+	</div>
+	<div id="shop_orders" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+            <img class="img-block" src="<?php echo $this->getViewFileUrl("TM_AndroidServices::images/tabs/shop_orders.png"); ?>" />
+            <span class="shop-count countcss"> </span>
+        </span>
+		<span class="title">Shop Orders</span> 
+	</div>
+	<div id="problem_orders" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+            <img class="img-block" src="<?php echo $this->getViewFileUrl("TM_AndroidServices::images/tabs/problem_orders.png"); ?>" />
+            <span class="problem-count countcss"> </span>
+        </span>
+		<span class="title">Problem Orders</span> 
+	</div>
+	<div id="problem_orders_log" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+            <img class="img-block" src="<?php echo $this->getViewFileUrl("TM_AndroidServices::images/tabs/problem_orders.png"); ?>" />
+        </span>
+		<span class="title">Problem Orders Log</span> 
+	</div>
+	<div id="order_checking" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+            <img class="img-block" src="<?php echo $this->getViewFileUrl("TM_AndroidServices::images/tabs/order_checks.png"); ?>" />
+            <span class="checking-count countcss"> </span>
+        </span>
+		<span class="title">Product Checks</span> 
+	</div>
+    <div id="order_checks" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+            <img class="img-block" src="<?php echo $this->getViewFileUrl("TM_AndroidServices::images/tabs/order_checks.png"); ?>" />
+            <!-- <span class="checks-count countcss"> </span> -->
+        </span>
+		<span class="title">Order Checks</span> 
+	</div>
+    <!-- <div id="return_records" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+             <span class="return-count countcss"> </span>
+        </span>
+        <span class="title">Return Records</span> 
+    </div>-->
+
+    <div id="b_location" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+            <img class="img-block" src="<?php echo $this->getViewFileUrl("TM_AndroidServices::images/tabs/order_checks.png"); ?>" />
+            <span class="blocation-count countcss"> </span>
+        </span>
+        <span class="title">B Location</span> 
+    </div>
+    <div id="active_orders" class="tablet-queue-grids click-able grid_detail">
+        <span class="text-block">
+            <img class="img-block" src="<?php echo $this->getViewFileUrl("TM_AndroidServices::images/tabs/queued_orders.png"); ?>" />
+            <span class="ontablet-count countcss"> </span>
+        </span>
+		<span class="title">OnTablet Orders</span> 
+	</div>
+  </div>
+
+<div id="grid-detail"></div>
+    <div id="commentModal" class="comment-modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-content-center">
+                <h3>Please Enter Comment</h3>
+                <input type="hidden" id="record_id" value="">
+                <input type="hidden" id="action_type" value="">
+                <textarea id="admin_comment" class="admin-comment"></textarea>
+            </div>
+            <div class="modal-content-buttons">
+                <button id="call_action">Submit</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<?php
+$formData = [
+    'divElement'       =>  '#testdiv',
+];
+
+$serializedFormData = $block->getjsonData($formData);
+
+?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "myjs": <?php /* @noEscape */ echo $serializedFormData; ?>
+        }
+    }
+</script>

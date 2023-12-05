@@ -1,0 +1,55 @@
+<?php
+
+$pic_a = $this->getSignatureImages();
+
+?>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column_unifi {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.timecolor
+{
+    color:red;
+}
+</style>
+
+
+<section class="admin__page-section custom-tab-content">
+
+    <div>
+    
+        <?php  if(isset($pic_a[0]))
+        { ?>
+            <a href="<?php echo $pic_a[0];?>">
+                <img alt="thumb" src="<?php echo $pic_a[0];?>">
+            </a>
+               <div>
+                 <span>Process Start At : </span><span class='timecolor'><?php echo date("m-d-Y H:i:s" , (strtotime($pic_a[1]) + (1*3600)))?></span>
+                </div><div>
+                 <span>Process End At : </span><span class='timecolor'><?php echo date("m-d-Y H:i:s" , (strtotime($pic_a[2]??"") + (1*3600)))?></span>
+               </div><div>
+                 <span>Checked by User : </span><span class='timecolor'><?php echo $pic_a[3]; ?></span>
+               </div>
+
+            
+            
+         <?php } ?>
+
+    </div>
+
+</section>
+

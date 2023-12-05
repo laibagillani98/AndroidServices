@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>
+            LLop Checks
+        </title>
+          <css src="https://use.fontawesome.com/releases/v5.7.1/css/all.css" src_type="url"/>
+ 
+     </head>
+    <body>
+    <referenceContainer name="header" remove="true" />
+    <referenceContainer name="menu" remove="true" />
+    <referenceContainer name="logo" remove="true" />
+    <referenceBlock name="notification.messages" remove="true" />
+        <referenceContainer name="header.container" remove="true" />
+    <referenceContainer name="footer" remove="true" />
+        <referenceContainer name="content">
+                <block class="TM\AndroidServices\Block\Adminhtml\LLopChecks\LLopChecks" name="llop_checks_dashboard" template="TM_AndroidServices::dashboard.phtml"></block>
+        </referenceContainer>
+    </body>
+</page>

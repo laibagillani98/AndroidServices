@@ -1,0 +1,295 @@
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+<route method="POST" url="/V1/androidServices/addbrokentiles">
+<service class="TM\AndroidServices\Api\WebServicesInterface" method="addBrokenTiles"/>
+<resources>
+<resource ref="TM_AndroidServices::TabletServices"/>
+</resources>
+</route>
+<route method="POST" url="/V1/androidServices/completebrokentiles">
+<service class="TM\AndroidServices\Api\WebServicesInterface" method="completeBrokenTiles"/>
+<resources>
+<resource ref="TM_AndroidServices::TabletServices"/>
+</resources>
+</route>
+<route method="POST" url="/V1/androidServices/orderchecking">
+<service class="TM\AndroidServices\Api\WebServicesInterface" method="orderChecking"/>
+<resources>
+<resource ref="TM_AndroidServices::TabletServices"/>
+</resources>
+</route>
+<route method="POST" url="/V1/androidServices/reporting">
+<service class="TM\AndroidServices\Api\WebServicesInterface" method="reporting"/>
+<resources>
+<resource ref="TM_AndroidServices::TabletServices"/>
+</resources>
+</route>
+<route method="POST" url="/V1/androidServices/checked">
+<service class="TM\AndroidServices\Api\WebServicesInterface" method="checked"/>
+<resources>
+<resource ref="TM_AndroidServices::TabletServices"/>
+</resources>
+</route>
+<route method="GET" url="/V1/androidServices/allusers">
+<service class="TM\AndroidServices\Api\WebServicesInterface" method="allusers"/>
+<resources>
+<resource ref="TM_AndroidServices::TabletServices"/>
+</resources>
+</route>
+<route method="GET" url="/V1/androidServices/checkprinters">
+<service class="TM\AndroidServices\Api\WebServicesInterface" method="checkPrinters"/>
+<resources>
+<resource ref="TM_AndroidServices::TabletServices"/>
+</resources>
+</route>
+<route method="GET" url="/V1/androidServices/reportedbrokentiles">
+<service class="TM\AndroidServices\Api\WebServicesInterface" method="ReportedBrokenTiles"/>
+<resources>
+<resource ref="TM_AndroidServices::TabletServices"/>
+</resources>
+</route>
+<route method="POST" url="/V1/androidServices/getqueueorder">
+<service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="getQueueOrder"/>
+<resources>
+<resource ref="TM_AndroidServices::TabletServices"/>
+</resources>
+</route>
+<route method="POST" url="/V1/androidServices/login">
+<service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="loginTablet"/>
+<resources>
+<resource ref="TM_AndroidServices::TabletServices"/>
+</resources>
+</route>
+<route method="POST" url="/V1/androidServices/logout">
+<service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="logoutTablet"/>
+<resources>
+<resource ref="TM_AndroidServices::TabletServices"/>
+</resources>
+</route>
+<route method="POST" url="/V1/androidServices/reportproblem">
+<service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="reportOrderProblem"/>
+<resources>
+<resource ref="TM_AndroidServices::TabletServices"/>
+</resources>
+</route>
+<route method="POST" url="/V1/androidServices/completeorder">
+<service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="orderComplete"/>
+<resources>
+<resource ref="TM_AndroidServices::TabletServices"/>
+</resources>
+</route>
+<route method="POST" url="/V1/androidServices/pickeditems">
+<service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="itemsPicked"/>
+<resources>
+<resource ref="TM_AndroidServices::TabletServices"/>
+</resources>
+</route>
+<route method="POST" url="/V1/androidServices/getscanorder">
+<service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="getScanOrder"/>
+<resources>
+<resource ref="TM_AndroidServices::TabletServices"/>
+</resources>
+</route>
+<route method="POST" url="/V1/androidServices/allcompleteorders">
+<service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="getAllCompleteOrders"/>
+<resources>
+<resource ref="TM_AndroidServices::TabletServices"/>
+</resources>
+</route>
+<route method="POST" url="/V1/androidServices/viewcompletedorder">
+<service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="viewCompleteOrder"/>
+<resources>
+<resource ref="TM_AndroidServices::TabletServices"/>
+</resources>
+</route>
+<route method="POST" url="/V1/androidServices/printcompletedorder">
+<service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="printCompleteOrder"/>
+<resources>
+<resource ref="TM_AndroidServices::TabletServices"/>
+</resources>
+</route>
+<route method="POST" url="/V1/androidServices/setpalletscantime">
+<service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="setPalletScanTime"/>
+<resources>
+<resource ref="TM_AndroidServices::TabletServices"/>
+</resources>
+</route>
+<route method="GET" url="/V1/androidServices/pickerlist">
+<service class="TM\AndroidServices\Api\WebServicesInterface" method="pickerList"/>
+<resources>
+<resource ref="TM_AndroidServices::TabletServices"/>
+</resources>
+</route>
+<route method="GET" url="/V1/androidServices/getauthorizedusers">
+    <service class="TM\AndroidServices\Api\WebServicesInterface" method="getauthorizedusers"/>
+    <resources>
+    <resource ref="TM_AndroidServices::TabletServices"/>
+    </resources>
+    </route>
+        <route method="GET" url="/V1/androidServices/futurepalletusers">
+            <service class="TM\AndroidServices\Api\FutureOrdersServicesInterface" method="FuturePalletUsers"/>
+            <resources>
+                <resource ref="TM_AndroidServices::TabletServices"/>
+            </resources>
+        </route>
+        <route method="GET" url="/V1/androidServices/viewunassignedorders">
+            <service class="TM\AndroidServices\Api\FutureOrdersServicesInterface" method="viewUnassignedOrders"/>
+            <resources>
+                <resource ref="TM_AndroidServices::TabletServices"/>
+            </resources>
+        </route>
+        <route method="POST" url="/V1/androidServices/assignlocationfutureorders">
+            <service class="TM\AndroidServices\Api\FutureOrdersServicesInterface" method="assignLocationFutureOrders"/>
+            <resources>
+                <resource ref="TM_AndroidServices::TabletServices"/>
+            </resources>
+        </route>
+        <route method="POST" url="/V1/androidServices/locatefutureorder">
+            <service class="TM\AndroidServices\Api\FutureOrdersServicesInterface" method="locateFutureOrder"/>
+            <resources>
+                <resource ref="TM_AndroidServices::TabletServices"/>
+            </resources>
+        </route>
+        <route method="POST" url="/V1/androidServices/removefutureorder">
+            <service class="TM\AndroidServices\Api\FutureOrdersServicesInterface" method="removeFutureOrder"/>
+            <resources>
+                <resource ref="TM_AndroidServices::TabletServices"/>
+            </resources>
+        </route>
+        <route method="GET" url="/V1/androidServices/futureorders">
+            <service class="TM\AndroidServices\Api\FutureOrdersServicesInterface" method="FutureOrders"/>
+            <resources>
+                <resource ref="TM_AndroidServices::TabletServices"/>
+            </resources>
+           </route>
+        <route method="POST" url="/V1/androidServices/returnrecords">
+        	<service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="returnRecords"/>
+        	<resources>
+        		<resource ref="TM_AndroidServices::TabletServices"/>
+        	</resources>
+        </route>
+        <route method="POST" url="/V1/androidServices/orderdetails">
+        	<service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="orderDetails"/>
+        	<resources>
+        		<resource ref="TM_AndroidServices::TabletServices"/>
+        	</resources>
+        </route>
+        <route method="POST" url="/V1/androidServices/putaways">
+        	<service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="putAways"/>
+        	<resources>
+        		<resource ref="TM_AndroidServices::TabletServices"/>
+        	</resources>
+        </route>    
+         <route method="POST" url="/V1/androidServices/llopchecks">
+        	<service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="llopChecks"/>
+        	<resources>
+        		<resource ref="TM_AndroidServices::TabletServices"/>
+        	</resources>
+        </route>    
+        <route method="GET" url="/V1/androidServices/getllopconfig">
+        <service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="getLLopConfig"/>
+         <resources>
+            <resource ref="TM_AndroidServices::TabletServices"/>
+         </resources>
+         </route>
+        <route method="POST" url="/V1/androidServices/getSKudetails">
+            <service class="TM\AndroidServices\Api\WebServicesInterface" method="getSKUDetails"/>
+            <resources>
+                <resource ref="anonymous"/>
+            </resources>
+        </route>
+
+        <route method="POST" url="/V1/androidServices/dhl_order">
+            <service class="TM\AndroidServices\Api\WebServicesInterface" method="orderPicked"/>
+            <resources>
+                <resource ref="TM_AndroidServices::TabletServices"/>
+            </resources>
+        </route>
+        <route method="POST" url="/V1/androidServices/dhlapicall">
+            <service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="dhlApiCall"/>
+            <resources>
+                <resource ref="TM_AndroidServices::TabletServices"/>
+            </resources>
+        </route>
+        
+        <route method="POST" url="/V1/androidServices/otherchecks">
+        	<service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="otherChecks"/>
+        	<resources>
+        		<resource ref="TM_AndroidServices::TabletServices"/>
+        	</resources>
+        </route>
+         <route method="POST" url="/V1/androidServices/completecombinepick">
+        	<service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="CompleteCombinePick"/>
+        	<resources>
+        		<resource ref="TM_AndroidServices::TabletServices"/>
+        	</resources>
+        </route>
+        <route method="POST" url="/V1/androidServices/parkbatch">
+        	<service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="parkBatch"/>
+        	<resources>
+        		<resource ref="TM_AndroidServices::TabletServices"/>
+        	</resources>
+        </route>
+          <route method="POST" url="/V1/androidServices/reportbatchitem">
+        	<service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="ReportBatchItem"/>
+        	<resources>
+        		<resource ref="TM_AndroidServices::TabletServices"/>
+        	</resources>
+        </route>
+
+        <route method="POST" url="/V1/androidServices/userauthentication">
+            <service class="TM\AndroidServices\Api\WebServicesInterface" method="UserAuthentication"/>
+            <resources>
+                <resource ref="TM_AndroidServices::TabletServices"/>
+            </resources>
+        </route>
+        <route method="POST" url="/V1/androidServices/generateshoppallet">
+            <service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="GenerateShopPallet"/>
+            <resources>
+                <resource ref="TM_AndroidServices::TabletServices"/>
+            </resources>
+        </route>
+          
+        <route method="POST" url="/V1/androidServices/getshopusers">
+            <service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="ShopUsers"/>
+            <resources>
+                <resource ref="TM_AndroidServices::TabletServices"/>
+            </resources>
+        </route>
+        
+         <route method="POST" url="/V1/androidServices/getloadedorders">
+            <service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="GetLoadedOrders"/>
+            <resources>
+                <resource ref="TM_AndroidServices::TabletServices"/>
+            </resources>
+        </route>
+          <route method="POST" url="/V1/androidServices/unloadingpallets">
+            <service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="UnloadingPallets"/>
+            <resources>
+                <resource ref="TM_AndroidServices::TabletServices"/>
+            </resources>
+        </route>
+          <route method="POST" url="/V1/androidServices/checkipaddress">
+            <service class="TM\AndroidServices\Api\PalletQueueServicesInterface" method="CheckIPAddress"/>
+            <resources>
+                <resource ref="TM_AndroidServices::TabletServices"/>
+            </resources>
+        </route>
+        <route method="POST" url="/V1/androidServices/getwoodenpanels">
+           <service class="TM\AndroidServices\Api\WebServicesInterface" method="GetWoodenPanels"/>
+           <resources>
+               <resource ref="TM_AndroidServices::TabletServices"/>
+           </resources>
+       </route>
+       <route method="POST" url="/V1/androidServices/checkwoodenpanels">
+           <service class="TM\AndroidServices\Api\WebServicesInterface" method="CheckWoodenPanels"/>
+           <resources>
+               <resource ref="TM_AndroidServices::TabletServices"/>
+           </resources>
+       </route>
+         <route method="POST" url="/V1/androidServices/reprintwoodenpanels">
+           <service class="TM\AndroidServices\Api\WebServicesInterface" method="ReprintWoodenPanels"/>
+           <resources>
+               <resource ref="TM_AndroidServices::TabletServices"/>
+           </resources>
+       </route>
+ </routes>

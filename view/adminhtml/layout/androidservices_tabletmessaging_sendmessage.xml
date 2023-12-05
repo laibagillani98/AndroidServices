@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <head>
+        <!-- <title>
+            All Grids
+        </title> -->
+
+<!--        <css src="TM_Base::css/base.css"/>-->
+        <css src="TM_AndroidServices::css/dropdown.min.css" />
+<!--               <script src="TM_AndroidServices::js/jquery.dropdown.js"/>-->
+    </head>
+
+    <body>
+        <referenceContainer name="content">
+            <block class="TM\AndroidServices\Block\Adminhtml\Tabletmessaging\SendMessage" name="send_message_screen" template="TM_AndroidServices::send_message.phtml"></block>
+        </referenceContainer>
+    </body>
+</page>
