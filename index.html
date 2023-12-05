@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="sales_order_item" resource="default">
+	    <column xsi:type="smallint" name="warehouse" padding="2" default="1" unsigned="true" nullable="true" comment="Warehouse column"/>
+	</table>
+	<table name="sales_order" resource="default">
+	    <column xsi:type="smallint" name="warehouse" padding="2" default="1" unsigned="true" nullable="true" comment="Warehouse column"/>
+  	</table>
+	<table name="sales_order_grid" resource="default">
+	    <column xsi:type="smallint" name="warehouse" padding="2" default="1" unsigned="true" nullable="true" comment="Warehouse column"/>
+  	</table>
+	<table name="mb_order_processing_pallet" resource="default">
+	    <column xsi:type="smallint" name="warehouse" padding="2" default="1" unsigned="true" nullable="true" comment="Warehouse column"/>
+  	</table>
+	<table name="order_processing_small" resource="default">
+	    <column xsi:type="smallint" name="warehouse" padding="2" default="1" unsigned="true" nullable="true" comment="Warehouse column"/>
+  	</table>
+  	<table name="sales_order_item" resource="default">
+	    <column xsi:type="smallint" name="checked" padding="2" default="0" unsigned="true" nullable="true" comment="Warehouse Checked column"/>
+	</table>
+	<table name="sales_order_item" resource="default">
+	    <column xsi:type="smallint" name="picked" padding="2" default="0" unsigned="true" nullable="true" comment="Warehouse Picked column"/>
+	</table>
+	<table name="mb_order_processing_pallet" resource="default">
+	    <column xsi:type="varchar" name="python_user" padding="2" default="NULL" unsigned="true" nullable="true" comment="Warehouse column"/>
+  	</table>
+  	<table name="mb_order_processing_pallet" resource="default">
+	    <column xsi:type="smallint" name="python_queue" padding="2" default="1" unsigned="true" nullable="true" comment="Warehouse column"/>
+  	</table>
+  	<table name="order_processing_small" resource="default">
+  		<column name="py_consingment_id" nullable="true" xsi:type="varchar" comment="Consignment For Python"/>
+  	</table>
+	<table name="mb_order_processing_pallet" resource="default">
+	      <column xsi:type="text" name="py_consignment_id" nullable="false" comment="python consignment"/>
+	      <column xsi:type="text" name="py_bar_code" nullable="false" comment="python barcode"/>
+  	</table>
+	<table name="order_processing_small" resource="default">
+		<column name="python_user" nullable="true" xsi:type="varchar" comment="User For Python"/>
+	</table>
+</schema>
+
